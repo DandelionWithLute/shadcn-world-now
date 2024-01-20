@@ -1,4 +1,4 @@
-import { getServerSession } from "next-auth";
+import { auth } from "@/lib/auth";
 import prisma from "@/lib/connect";
 import { NextResponse } from "next/server";
 
@@ -50,7 +50,7 @@ export const GET = async (req) => {
 
 // CREATE A POST
 export const POST = async (req) => {
-  const session = await getServerSession();
+  const session = await auth();
   
 
   if (!session) {
@@ -61,9 +61,9 @@ export const POST = async (req) => {
 
   try {
     const body = await req.json();
-    console.log("body next:")
-    console.log(body)
-    console.log(session.user.email)
+    // console.log("body next:")
+    // console.log(body)
+    // console.log(session.user.email)
     const Email = session.user.email
     const validEmail = Email.toLowerCase()
     const post = await prisma.post.create({

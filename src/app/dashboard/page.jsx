@@ -98,7 +98,7 @@ const Dashboard = () => {
   };
 
   if (session.status === "authenticated") {
-    console.log(session.data);
+    // console.log(session.data);
     return (
       <div className={styles.container}>
         <div className={styles.posts}>
