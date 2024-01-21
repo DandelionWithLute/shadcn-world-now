@@ -26,7 +26,7 @@ const Login = ({ url }) => {
   }
 
   if (session.status === "authenticated") {
-    router?.push("/dashboard");
+    router?.push("/");
   }
 
   const handleSubmit = async (e) => {
@@ -81,7 +81,7 @@ const Login = ({ url }) => {
         Login with Google
       </button>
       <span className={styles.or}>- OR -</span>
-      <Link className={styles.link} href="/dashboard/register">
+      <Link className={styles.link} href="/register">
         Create new account
       </Link>
       {/* <button
